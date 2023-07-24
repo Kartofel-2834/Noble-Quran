@@ -1,0 +1,17 @@
+.sidebar {
+  position: fixed;
+  z-index: 60;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: fit-content;
+  min-width: 10em;
+  background-color: var(--four);
+  box-shadow: 3px 0px 8px 0px var(--primaryTransparent);
+  transform: translateX(-105%);
+  transition: 0.15s linear;
+}
+
+.sidebar_opened {
+  transform: translateX(0%);
+}

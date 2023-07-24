@@ -1,0 +1,34 @@
+.skeleton {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2em;
+
+  width: 100%;
+  padding: 2em;
+  border: 2px solid;
+  background-color: var(--four);
+  border-color: var(--four);
+  border-radius: 18px;
+  margin-top: 1em;
+  opacity: 0.5;
+}
+
+.skeleton__line {
+  width: 100%;
+  height: 1.5em;
+  border-radius: 16px;
+  background-color: var(--textColor);
+  opacity: 0.4;
+  grid-column: 1 / 4;
+}
+
+.skeleton__line:first-child {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.skeleton__line:last-child {
+    grid-column: 1 / 3;
+}
+
+

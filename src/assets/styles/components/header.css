@@ -1,0 +1,84 @@
+header {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  z-index: 50;
+  background-color: var(--four);
+  transition: 0.25s linear;
+}
+
+.header_hided {
+  transform: translateY(-100%);
+}
+
+.header__progress {
+  width: 100%;
+  height: 3px;
+  background-color: var(--three);
+}
+
+.header__inner {
+  display: flex;
+  jutify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+}
+
+.header__inner__title {
+  width: fit-content;
+  cursor: pointer;
+  font-size: 1.25em;
+  padding: 0;
+  margin-left: 1em;
+}
+
+.header__inner__menu-button {
+  z-index: 100;
+  transition: 0.15s linear;
+}
+
+.header__inner__menu-button_active {
+  background: var(--textColor);
+  border-color: var(--textColor);
+}
+
+.header__inner__menu-button_active .header__inner__menu-button__inner__line {
+  background-color: var(--primary);
+  opacity: 0;
+}
+
+.header__inner__menu-button_active
+  .header__inner__menu-button__inner__line:first-child {
+  transform: rotate(45deg) translate(5px, 5px) scale(1.3);
+  opacity: 1;
+}
+
+.header__inner__menu-button_active
+  .header__inner__menu-button__inner__line:last-child {
+  transform: rotate(-45deg) translate(5px, -5px) scale(1.3);
+  opacity: 1;
+}
+
+.header__inner__menu-button__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 1.75em;
+  height: 1.75em;
+}
+
+.header__inner__menu-button__inner__line {
+  background-color: var(--textColor);
+  width: 80%;
+  height: 3px;
+  transition: 0.15s linear;
+}
+
+.header__inner__menu-button__inner__line:not(:first-child) {
+  margin-top: 0.25em;
+}

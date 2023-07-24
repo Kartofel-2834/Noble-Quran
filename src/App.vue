@@ -1,30 +1,73 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <Header :menu-opened="sidebarOpened" @menu-open="sidebarOpened = true" />
+
+  <Player
+    :opened="opened"
+    :src="audioSrc"
+    :paused="paused"
+    :current-time-setter="timeSetter"
+    :volume="volume"
+    :speed="speed"
+    :duration="duration"
+    :repeated="repeated"
+    @load="({ duration }) => updatePlayer({ duration })"
+    @timeupdate="updateCurrentTime"
+    @play="() => updatePlayer({ paused: false })"
+    @pause="() => updatePlayer({ paused: true })"
+    @next="nextAyat"
+    @prev="prevAyat"
+    @volume-change="(update) => updatePlayer({ volume: update })"
+    @speed-change="(update) => updatePlayer({ speed: update })"
+    @repeat-toggle="(repeated) => updatePlayer({ repeated })"
+    @close="closePlayer"
+  />
+
+  <Sidebar :opened="sidebarOpened">
+    <div class="main-sidebar">
+      <p>Настройки</p>
+      <Button icon="mingcute:close-fill" rounded />
+    </div>
+  </Sidebar>
+
   <router-view />
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<style src="@/assets/styles/index.css"></style>
 
-nav {
-  padding: 30px;
-}
+<script>
+import { mapMutations, mapGetters, mapState, mapActions } from "vuex";
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+// Components
+import Header from "@/components/Header";
+import Sidebar from "@/components/Sidebar";
+import Player from "@/components/Player";
+import Button from "@/components/Button";
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+export default {
+  components: { Header, Sidebar, Player, Button },
+
+  data() {
+    return { sidebarOpened: false };
+  },
+
+  computed: {
+    ...mapState({
+      opened: (state) => state.player.opened,
+      ayat: (state) => state.player.ayat,
+      paused: (state) => state.player.paused,
+      volume: (state) => state.player.volume,
+      speed: (state) => state.player.speed,
+      timeSetter: (state) => state.player.timeSetter,
+      duration: (state) => state.player.duration,
+      repeated: (state) => state.player.repeated,
+    }),
+
+    ...mapGetters(["audioSrc"]),
+  },
+
+  methods: {
+    ...mapMutations(["updatePlayer", "closePlayer"]),
+    ...mapActions(["updateCurrentTime", "nextAyat", "prevAyat"]),
+  },
+};
+</script>

@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Ubuntu medium";
+  src: url("../fonts/Ubuntu-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Ubuntu medium-italic";
+  src: url("../fonts/Ubuntu-MediumItalic.ttf");
+}
+
+@font-face {
+  font-family: "Ubuntu light";
+  src: url("../fonts/Ubuntu-Light.ttf");
+}
+
+@font-face {
+  font-family: "Ubuntu light-italic";
+  src: url("../fonts/Ubuntu-LightItalic.ttf");
+}
+
+@font-face {
+  font-family: "Ubuntu bold";
+  src: url("../fonts/Ubuntu-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Ubuntu bold-italic";
+  src: url("../fonts/Ubuntu-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "Ubuntu italic";
+  src: url("../fonts/Ubuntu-Italic.ttf");
+}
+
+@font-face {
+  font-family: Quran;
+  src: url("../fonts/me-Quran.ttf");
+}
+
+:root {
+  --primary: #14a76c;
+  --primaryTransparent: #14a76c80;
+  --primaryFaded: white;
+  --two: #3e3e3e;
+  --three: #6a6a6a;
+  --four: #272727;
+  --fourTransparent: #272727b3;
+  --textColor: white;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background-color: var(--two);
+  color: var(--textColor);
+  font-family: Ubuntu;
+}
+
+.no-transition {
+  transition: none !important;
+}
+
+.hided {
+  display: none !important;
+}

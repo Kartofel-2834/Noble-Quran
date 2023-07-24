@@ -1,0 +1,22 @@
+.dropdown {
+  display: flex;
+  justify-content: center;
+  z-index: 40;
+}
+
+.dropdown__content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--four);
+  border: 1px solid var(--three);
+  border-radius: 5px;
+  padding: 1em;
+
+  opacity: 0;
+  transition: 0.15s linear;
+}
+
+.dropdown__content_opened {
+  opacity: 1;
+}

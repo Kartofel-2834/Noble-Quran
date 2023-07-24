@@ -1,0 +1,49 @@
+button {
+  font-size: 1em;
+  padding: 0.5em;
+
+  appearance: none;
+  cursor: pointer;
+  border: 1px solid;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+
+  background-color: var(--colorTheme);
+  border-color: var(--colorTheme);
+  color: var(--textColor);
+
+  transition: 0.15s ease-out;
+}
+
+.button_reversed {
+  flex-direction: row-reverse;
+}
+
+.button_faded {
+  color: var(--colorTheme);
+  border-color: var(--colorThemeFaded);
+  background-color: var(--colorThemeFaded);
+}
+
+button svg {
+  transform: scale(1.35);
+}
+
+button:not(.button_reversed) .button-content {
+  margin-right: 0.5em;
+}
+
+.button_reversed .button-content {
+  margin-left: 0.5em;
+}
+
+.button_rounded {
+  border-radius: 2em;
+}
+
+button:not(:active):hover {
+  opacity: 0.85;
+}

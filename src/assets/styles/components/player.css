@@ -1,0 +1,107 @@
+.player {
+  position: fixed;
+  bottom: 0;
+  background-color: var(--four);
+  border-radius: 10px 10px 0 0;
+
+  width: 100%;
+  height: fit-content;
+  z-index: 30;
+
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(125%);
+  transition: 0.15s linear;
+}
+
+.player_opened {
+  transform: translateY(0);
+}
+
+/* BUTTONS-INNER */
+
+.player__content {
+  padding: 1em;
+  width: calc(100% - 2em);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player__content__buttons-inner {
+  display: flex;
+  align-items: center;
+}
+
+.player__content__buttons-inner__button {
+  margin-right: 1em;
+  font-size: 1.6em;
+  width: 2.75em;
+}
+
+.player__content__buttons-inner__button:last-child {
+  margin-right: 0;
+}
+
+.player__content__buttons-inner__button_repeat svg {
+  transition: 0.15s linear;
+}
+
+.player__content__buttons-inner__button_repeat_active svg {
+  transform: scale(1.35) rotate(180deg);
+}
+
+.player__content__buttons-inner__button_play {
+  font-size: 1.8em;
+}
+
+.player__content__buttons-inner__button_settings svg {
+  transform: scale(1.35) rotate(30deg);
+  transition: 0.15s linear;
+}
+
+.player__content__buttons-inner__button_settings_active svg {
+  transform: scale(1.35) rotate(60deg);
+}
+
+/* TIME */
+
+.player__content__time {
+  display: flex;
+  font-size: 1.35em;
+  width: 3.75em;
+}
+
+.player__content__time:first-child {
+  justify-content: flex-start;
+}
+
+.player__content__time:last-child {
+  justify-content: flex-end;
+}
+
+/* OPTIONS */
+.player__content__options {
+  width: 15vw;
+}
+
+.player__content__options__button {
+  width: 100%;
+  font-weight: 700;
+  justify-content: space-between;
+  padding: 0.5em 1em;
+  margin-bottom: 0.75em;
+}
+
+.player__content__option-inner {
+  display: flex;
+  align-items: center;
+}
+
+.player__content__option-inner__icon {
+  width: 2.5em;
+  height: 2.5em;
+  margin-right: 0.5em;
+}
